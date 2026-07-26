@@ -991,6 +991,37 @@ svg {
       align-items: start;
     }
 
+    #logic-grid-lab .thinking-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    #logic-grid-lab .thinking-step {
+      display: grid;
+      gap: 8px;
+      padding-block: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #logic-grid-lab .thinking-step:last-child {
+      border-bottom: 0;
+    }
+
+    #logic-grid-lab .clue-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #logic-grid-lab .clue-table th,
+    #logic-grid-lab .clue-table td {
+      padding: 9px 8px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
     @media (max-width: 860px) {
       #logic-grid-lab .grid-layout {
         grid-template-columns: 1fr;
@@ -1007,7 +1038,8 @@ svg {
       }
 
       #logic-grid-lab .story-layout,
-      #logic-grid-lab .practice-layout {
+      #logic-grid-lab .practice-layout,
+      #logic-grid-lab .thinking-layout {
         grid-template-columns: 1fr;
       }
     }
@@ -1030,6 +1062,51 @@ svg {
       <article class="card method-card"><span class="method-letter">R</span><h3>Record clues</h3><p class="method-copy">Translate each sentence into ✓ or × marks.</p></article>
       <article class="card method-card"><span class="method-letter">I</span><h3>Infer more</h3><p class="method-copy">A ✓ forces × marks across its row and column.</p></article>
       <article class="card method-card"><span class="method-letter">D</span><h3>Double-check</h3><p class="method-copy">Read every clue against the final matches.</p></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="logic-thinking-title">
+    <h2 id="logic-thinking-title">How to think when reading the clues</h2>
+    <div class="thinking-layout">
+      <article>
+        <div class="thinking-step">
+          <h3>1. Name the categories before solving</h3>
+          <p>Underline the category words: people, pets, and order. Confirm that each category has the same number of choices and that every choice will be used once.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>2. Translate one sentence at a time</h3>
+          <p>Ask, “Does this clue prove a match, prove an impossibility, or describe an order relationship?” Record only what the sentence actually guarantees.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>3. Spread the consequence of every ✓</h3>
+          <p>When Maya is confirmed first, Maya cannot be second or third, and nobody else can be first. One ✓ completes both its row and column with × marks.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>4. Preserve unresolved possibilities</h3>
+          <p>A clue such as “rabbit immediately before dog” may allow two blocks. Do not pick one. Keep both until another clue eliminates a block.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>5. Use contradiction carefully</h3>
+          <p>Temporarily test one remaining block. If it forces a mark that directly breaks a clue, reject that entire block and use the alternative.</p>
+        </div>
+      </article>
+      <article class="card explain-card">
+        <h3>Translate common clue types</h3>
+        <table class="clue-table">
+          <thead><tr><th>Clue form</th><th>First marks</th><th>What to think</th></tr></thead>
+          <tbody>
+            <tr><td>“Noah is second.”</td><td>One ✓</td><td>Complete that row and column with ×.</td></tr>
+            <tr><td>“Maya has no cat.”</td><td>One ×</td><td>Do not choose between her remaining pets yet.</td></tr>
+            <tr><td>“Rabbit before dog.”</td><td>Impossible end positions</td><td>List every order block still possible.</td></tr>
+            <tr><td>“Priya is not first.”</td><td>One ×</td><td>Combine it with existing order marks.</td></tr>
+          </tbody>
+        </table>
+        <div class="think-box">
+          <strong>Think aloud:</strong>
+          <p>“This clue directly gives ___. That forces ___ because each row and column gets one ✓. I still cannot decide ___.”</p>
+        </div>
+        <p><strong>If stuck:</strong> find a row or column with two × marks, or combine an order clue with a person/item clue. Do not reread clues without checking what new marks they can now use.</p>
+      </article>
     </div>
   </section>
 

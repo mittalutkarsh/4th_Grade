@@ -988,8 +988,39 @@ svg {
       padding-left: 22px;
     }
 
+    #minesweeper-lab .thinking-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    #minesweeper-lab .thinking-step {
+      display: grid;
+      gap: 8px;
+      padding-block: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #minesweeper-lab .thinking-step:last-child {
+      border-bottom: 0;
+    }
+
+    #minesweeper-lab .count-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #minesweeper-lab .count-table th,
+    #minesweeper-lab .count-table td {
+      padding: 9px 8px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
     @media (max-width: 740px) {
-      #minesweeper-lab .demo-layout {
+      #minesweeper-lab .demo-layout,
+      #minesweeper-lab .thinking-layout {
         grid-template-columns: 1fr;
       }
     }
@@ -1013,6 +1044,50 @@ svg {
       <article class="card method-card"><span class="method-letter">U</span><h3>Use what remains</h3><p class="method-copy">Clue − marked mines = mines still needed.</p></article>
       <article class="card method-card"><span class="method-letter">N</span><h3>Name every square</h3><p class="method-copy">Mark a mine ● or a safe square ×.</p></article>
       <article class="card method-card"><span class="method-letter">T</span><h3>Test every clue</h3><p class="method-copy">Recount before declaring the puzzle finished.</p></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="mine-thinking-title">
+    <h2 id="mine-thinking-title">How to think about a numbered clue</h2>
+    <div class="thinking-layout">
+      <article>
+        <div class="thinking-step">
+          <h3>1. Freeze one clue’s neighborhood</h3>
+          <p>Trace the eight possible directions around the clue. Edge and corner clues have fewer neighbors. Count only squares that actually touch the clue.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>2. Make a small inventory</h3>
+          <p>Sort the touching squares into marked mines, marked safe squares, and unknown squares. Safe squares do not change the mine count.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>3. Compute what is still needed</h3>
+          <p>Subtract marked mines from the clue. Compare that result with the number of unknown neighbors—not with the whole board.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>4. Act only at an extreme</h3>
+          <p>If zero mines are still needed, every unknown neighbor is safe. If the mines still needed equal the unknown neighbors, every unknown neighbor is a mine.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>5. Move to an overlapping clue</h3>
+          <p>A new mine or safe mark belongs to several nearby neighborhoods. Recount those clues; the overlap is what carries the reasoning across the grid.</p>
+        </div>
+      </article>
+      <article class="card explain-card">
+        <h3>The decision table</h3>
+        <table class="count-table">
+          <thead><tr><th>Clue</th><th>Marked mines</th><th>Unknown</th><th>Conclusion</th></tr></thead>
+          <tbody>
+            <tr><td>3</td><td>0</td><td>3</td><td>All 3 are mines</td></tr>
+            <tr><td>2</td><td>2</td><td>4</td><td>All 4 are safe</td></tr>
+            <tr><td>3</td><td>1</td><td>4</td><td>Need 2 more; wait</td></tr>
+          </tbody>
+        </table>
+        <div class="think-box">
+          <strong>Think aloud:</strong>
+          <p>“This clue is ___. It already touches ___ mines, so it still needs ___. There are ___ unknown neighbors. Therefore ___.”</p>
+        </div>
+        <p><strong>If stuck:</strong> do not guess a mine. Find another clue with fewer unknown neighbors or compare two clues whose neighborhoods overlap.</p>
+      </article>
     </div>
   </section>
 

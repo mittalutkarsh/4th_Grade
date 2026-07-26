@@ -852,7 +852,8 @@ svg {
     }
 
     #sudoku-lab .method-row,
-    #sudoku-lab .practice-layout {
+    #sudoku-lab .practice-layout,
+    #sudoku-lab .thinking-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
@@ -978,6 +979,24 @@ svg {
       padding-left: 22px;
     }
 
+    #sudoku-lab .thinking-step {
+      display: grid;
+      gap: 8px;
+      padding-block: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #sudoku-lab .thinking-step:last-child {
+      border-bottom: 0;
+    }
+
+    #sudoku-lab .question-strip {
+      padding: 16px;
+      border-left: 4px solid var(--primary);
+      background: var(--accent);
+      color: var(--accent-foreground);
+    }
+
     #sudoku-lab .practice-grid {
       width: min(100%, 320px);
     }
@@ -985,7 +1004,8 @@ svg {
     @media (max-width: 760px) {
       #sudoku-lab .demo-layout,
       #sudoku-lab .practice-layout,
-      #sudoku-lab .method-row {
+      #sudoku-lab .method-row,
+      #sudoku-lab .thinking-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -1023,6 +1043,39 @@ svg {
         <span class="method-letter">N</span>
         <h3>Note the single and repeat</h3>
         <p class="method-copy">Place a number only when one choice remains, then SCAN again.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="sudoku-thinking-title">
+    <h2 id="sudoku-thinking-title">How to think before placing a number</h2>
+    <div class="thinking-grid">
+      <article>
+        <div class="thinking-step">
+          <h3>1. Start where the information is strongest</h3>
+          <p>Do not begin with the first empty square. Look for a row, column, or box that already contains two or three numbers. Fewer missing numbers means fewer possibilities to compare.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>2. Separate “could fit” from “must fit”</h3>
+          <p>A number may be legal in two squares. That is not enough to place it. Keep both possibilities open until another row, column, or box blocks one of them.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>3. Explain every crossed-out choice</h3>
+          <p>Say the reason precisely: “3 cannot go here because this column already has a 3.” If no group blocks the candidate, do not cross it out.</p>
+        </div>
+        <div class="thinking-step">
+          <h3>4. Let each answer create the next clue</h3>
+          <p>After placing one number, immediately rescan its row, column, and box. One placement changes three groups and often creates a new single.</p>
+        </div>
+      </article>
+      <article class="card practice-panel">
+        <h3>Recognize two kinds of “only choice”</h3>
+        <p><strong>Square single:</strong> one empty square has only one legal candidate after checking its row, column, and box.</p>
+        <p><strong>Group single:</strong> a missing number has only one possible square inside a row, column, or box, even if that square has other candidates.</p>
+        <div class="question-strip">
+          <strong>Think aloud:</strong> “This group is missing ___. Candidate ___ is blocked here by ___. Therefore it must go ___.”
+        </div>
+        <p><strong>If stuck:</strong> move to a different group, list candidates lightly, and search for a new single. Being stuck means “look elsewhere,” not “guess.”</p>
       </article>
     </div>
   </section>
