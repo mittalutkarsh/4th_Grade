@@ -1,6 +1,6 @@
 # Fourth Grade Learning Pages
 
-An expandable collection of fourth-grade learning pages. The first subject area is **Logic**, beginning with an interactive Shapes lesson.
+An expandable collection of fourth-grade learning pages. The first subject area is **Logic**, with interactive lessons that teach a repeatable reasoning method for each puzzle family.
 
 ## Live site
 
@@ -16,24 +16,30 @@ Once GitHub Pages finishes deploying:
 ├── Logic/
 │   ├── shapes/
 │   │   └── index.html
+│   ├── sudoku/
+│   │   └── index.html
+│   ├── minesweeper/
+│   │   └── index.html
+│   ├── logic-grid/
+│   │   └── index.html
 │   └── skills/
-│       └── create-shape-number-card-tests/
-│           ├── SKILL.md
-│           ├── agents/openai.yaml
-│           ├── references/puzzle-spec.md
-│           └── scripts/validate_card_puzzle.py
+│       ├── create-shape-number-card-tests/
+│       ├── create-four-by-four-sudoku-tests/
+│       ├── create-minesweeper-logic-tests/
+│       └── create-logic-grid-tests/
 └── .github/workflows/pages.yml
 ```
 
-## Current learning page
+## Current learning pages
 
-The **Shapes** button on the Logic home page opens a complete lesson containing:
+The Logic home page currently links to:
 
-- an interactive clue-by-clue walkthrough;
-- the SAME problem-solving method;
-- a parent teaching script;
-- four worked explanations;
-- common mistakes and consistency checks.
+- **Shapes** - the SAME inventory-and-elimination method;
+- **4x4 Sudoku** - the SCAN row-column-box method;
+- **Minesweeper Logic** - the COUNT neighboring-mines method;
+- **Logic Grids** - the GRID checkmark-and-cross method.
+
+Each lesson includes clickable reasoning steps, parent prompts, a worked example, practice interaction, and consistency checks.
 
 ## Add another Logic problem set
 
@@ -42,6 +48,6 @@ The **Shapes** button on the Logic home page opens a complete lesson containing:
 3. Add a new topic card and button to the root `index.html`.
 4. Push the changes to `main`; the Pages workflow will redeploy the site.
 
-## Test-maker skill
+## Test-maker skills
 
-`Logic/skills/create-shape-number-card-tests/` contains the reusable skill and deterministic validator for creating original shape-number-card tests with explained answer keys.
+Each folder under `Logic/skills/` contains a reusable test-generation skill, a puzzle specification, and a deterministic validator. The validators reject ambiguous puzzles before they are added to a worksheet or lesson.

@@ -1,6 +1,6 @@
 ---
 name: create-shape-number-card-tests
-description: Create original elementary or fifth-grade shape-number card logic tests, worksheets, practice sets, and answer keys in which each double-sided card has one shape and one number, then cards are flipped and shuffled between two views. Use when generating, varying, validating, solving, or explaining these card-inventory puzzles; when a test needs diagrams, mixed difficulty, unique answers, or child-friendly step-by-step explanations; or when producing a printable HTML, PDF, DOCX, or presentation version.
+description: Create original elementary, fourth-grade, or fifth-grade shape-number card logic tests, worksheets, practice sets, and answer keys in which each double-sided card has one shape and one number, then cards are flipped and shuffled between two views. Use when generating, varying, validating, solving, or explaining these card-inventory puzzles; when a test needs diagrams, mixed difficulty, unique answers, or child-friendly step-by-step explanations; or when producing a printable HTML, PDF, DOCX, or presentation version.
 ---
 
 # Create Shape-Number Card Tests

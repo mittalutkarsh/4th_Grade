@@ -1,0 +1,5 @@
+interface:
+  display_name: "Create Minesweeper Logic Tests"
+  short_description: "Build unique counting-and-deduction mine puzzles"
+  default_prompt: "Use $create-minesweeper-logic-tests to create an original elementary Minesweeper logic set with explained answers."
+

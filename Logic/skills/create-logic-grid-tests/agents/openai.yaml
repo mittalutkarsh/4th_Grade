@@ -1,0 +1,5 @@
+interface:
+  display_name: "Create Logic Grid Tests"
+  short_description: "Build unique matching puzzles with explained clues"
+  default_prompt: "Use $create-logic-grid-tests to create an original elementary logic-grid test with a separate explained answer key."
+

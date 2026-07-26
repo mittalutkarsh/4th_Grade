@@ -115,7 +115,7 @@
       box-shadow: var(--shadow);
     }
 
-    .shape-scene {
+    .topic-scene {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -125,6 +125,28 @@
       background: linear-gradient(135deg, var(--accent), #fff5e9);
       font-size: clamp(2.7rem, 10vw, 5rem);
       letter-spacing: 0.02em;
+    }
+
+    .topic-scene.sudoku {
+      color: #2f6b55;
+      background: linear-gradient(135deg, #e8f7ef, #f6fbff);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: clamp(1.45rem, 5vw, 2.6rem);
+      line-height: 1.2;
+      white-space: pre;
+    }
+
+    .topic-scene.minesweeper {
+      color: #7a451e;
+      background: linear-gradient(135deg, #fff1df, #fff8ee);
+    }
+
+    .topic-scene.logic-grid {
+      color: #315f87;
+      background: linear-gradient(135deg, #e8f3ff, #f4f0ff);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: clamp(1.4rem, 5vw, 2.4rem);
+      white-space: pre;
     }
 
     .topic-copy {
@@ -211,13 +233,54 @@
 
       <div class="topic-grid">
         <article class="topic-card">
-          <div class="shape-scene" aria-label="Triangle, square, circle, and star">▲ ■ ● ★</div>
+          <div class="topic-scene" aria-label="Triangle, square, circle, and star">▲ ■ ● ★</div>
           <div class="topic-copy">
             <h3>Shapes</h3>
             <p>Solve double-sided shape-number card puzzles using inventories, disappearing clues, duplicates, and elimination.</p>
           </div>
           <a class="topic-button" href="Logic/shapes/">
             <span>Open Shapes lesson</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-scene sudoku" aria-label="Four by four Sudoku grid">1 · · 4
+· 4 1 ·
+· 1 4 ·
+4 · · 1</div>
+          <div class="topic-copy">
+            <h3>4 × 4 Sudoku</h3>
+            <p>Use rows, columns, and 2 × 2 boxes to collect missing numbers and place only what must fit.</p>
+          </div>
+          <a class="topic-button" href="Logic/sudoku/">
+            <span>Open Sudoku lesson</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-scene minesweeper" aria-label="Mines, safe squares, and number clues">3 ● 4 ●<br>● ● × ●</div>
+          <div class="topic-copy">
+            <h3>Minesweeper Logic</h3>
+            <p>Count neighboring mines, mark safe squares, and use each new deduction to unlock the next clue.</p>
+          </div>
+          <a class="topic-button" href="Logic/minesweeper/">
+            <span>Open Minesweeper lesson</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-scene logic-grid" aria-label="Logic grid with yes and no marks">✓ × ×
+× ✓ ×
+× × ✓</div>
+          <div class="topic-copy">
+            <h3>Logic Grids</h3>
+            <p>Translate word clues into checkmarks and crosses, then combine categories without guessing.</p>
+          </div>
+          <a class="topic-button" href="Logic/logic-grid/">
+            <span>Open Logic Grid lesson</span>
             <span aria-hidden="true">→</span>
           </a>
         </article>

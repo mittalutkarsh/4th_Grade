@@ -1,0 +1,5 @@
+interface:
+  display_name: "Create 4x4 Sudoku Tests"
+  short_description: "Build unique, explained elementary Sudoku sets"
+  default_prompt: "Use $create-four-by-four-sudoku-tests to create an original 4x4 Sudoku practice set with child-friendly explanations."
+
