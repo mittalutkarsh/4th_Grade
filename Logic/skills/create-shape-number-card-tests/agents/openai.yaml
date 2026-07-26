@@ -1,0 +1,12 @@
+interface:
+  display_name: Shape-Number Card Test Maker
+  short_description: Create verified card-logic tests with explanations
+  default_prompt: Use $create-shape-number-card-tests to create a fifth-grade shape-number
+    card logic test with a fully explained answer key.
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
